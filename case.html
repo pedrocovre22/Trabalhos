@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de produtos</title>
+    <link rel="stylesheet" href="case.css">
+</head>
+<body>
+    <header>
+        <h2>Loja do Battinelas</h2>
+    </header>
+
+    <div class="container">
+        <h3>Lista de Produtos</h3>
+        <div class="div-produtos">
+            <input type="radio" name="frutas" 
+              onclick="selecionarProdutos('Minoxidil')">
+            <label>Minoxidil</label>
+            <br>
+            <input type="radio" name="frutas"
+              onclick="selecionarProdutos('Escova de Cabelo')">
+            <label>Escova de Cabelo</label>
+            <br>
+            <input type="radio" name="frutas" 
+              onclick="selecionarProdutos('Peruca')">
+            <label>Peruca</label>
+            <br>
+            <input type="radio" name="frutas" 
+              onclick="selecionarProdutos('Mascara')">
+            <label>Mascára</label>
+
+        </div>
+        <div class="div-resultado">
+            <label>Resultado</label>
+            <br>
+            <label id="resultado"></label>
+        </div>
+    </div>
+
+    <footer>
+        <ul>
+            <li>Lojinha do Battinelas</li>
+            <li>Só os careca lisa</li>
+        </ul>
+    </footer>
+
+    <script src="case.js"></script>
+</body>
+</html>
