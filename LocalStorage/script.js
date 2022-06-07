@@ -1,28 +1,48 @@
-let usuários = []
+let usuarios = []
 
-const addUsuários = () => {
+const addUsuario = () => {
     let nome = document.getElementById('nome').value
-    let nome = document.getElementById('email').value
-    let nome = document.getElementById('senha').value
+    let email = document.getElementById('email').value
+    let senha = document.getElementById('senha').value
+    let divErro = document.querySelector('.div-erro')
 
-    if(localStorage.getItem('usuarios') !=null){
+if(nome=="" || email == "" || senha == ""){
+    divErro.style.display ='block'
+}else{
+    divErro.style.display = 'none'
+}
+
+
+    if(localStorage.getItem('usuarios') != null){
         usuarios = JSON.parse(localStorage.getItem('usuarios'))
-        usuarios.forEach(usuarios => {
-            console.log(usuarios[0], usuarios[1])
-            tbody.innerHTML += "<tr> <td>"+usuario[0]+"</td> <td>"+usuario[1]+"</td> </tr>"
-            
-        });
-    }else {
-        tbody.innerHTML += "<tr> <td>Vazio</td> <td>Vazio</td> </tr>"
     }
-
-    usuários.push([nome, email, senha])
+   
+    usuarios.push([nome, email, senha])
     localStorage.setItem('usuarios', JSON.stringify(usuarios))
+    document.getElementById('nome').value = ""
+    document.getElementById('email').value = ""
+    document.getElementById('senha').value = ""
+    document.getElementById('confirmar-senha').value = ""
 }
 
 const listUsuarios = () => {
     let tbody = document.getElementById('table-linha')
+    if(localStorage.getItem('usuarios') != null){
+        usuarios = JSON.parse(localStorage.getItem('usuarios'))
+        usuarios.forEach((usuario, index) => {
+            tbody.innerHTML += "<tr> <td>" + usuario[0] + "</td> <td> "+ usuario[1] + "</td> " + 
+            "<td> <button onclick='deleteUsuario("+ index+")'> \u{1F5D1} </button> </td> </tr>"
+        });
+    }else{
+    tbody.innerHTML += "<tr> <td>Vazio</td> <td>Vazio</td> </tr>"
+    }
+}
 
-    tbody.innerHTML += "<tr> <td>Pedro</td> <td>pedro_covre@estudante.sesisenai.org.br<td> </tr>"
+const deleteUsuario = (index) =>{
+
+    usuarios = JSON.parse(localStorage.getItem('usuarios'))
+    let auxUsuarios = usuarios.filter((v, i) => i != index)
+    localStorage.setItem.setItem('usuarios', JSON.stringify(auxUsuarios))
+    document.location.reload(true)
 
 }
