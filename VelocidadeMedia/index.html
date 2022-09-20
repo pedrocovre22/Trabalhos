@@ -17,28 +17,33 @@
         </ul>
     </nav>
 <body>
-    <div class="container"></div>
+    <div class="container">
         <h1>Cálculo</h1>
         <div class="input_area">
             <h2>Valor de Deslocamento</h2>
-            <input id="deslocamento" type="number">
+            <input id="deslocamento" type="number" t >
         </div>
         <div class="input_area">
             <h2>Intervalo de Tempo</h2>
             <input id="tempo" type="number">
+
         </div>
             <button onclick="calculate()">Calcular</button>
-            
         </div>
+
         <div>
             <button onclick="limpar()">Limpar</button>
-            
         </div>  
 
         <div class="input_area">
-            <h2>Resultado</h2>
             <input id="velocidadeMedia" type="number">
         </div>
+
+        <div>
+            <h2>Resultado</h2>
+            <textarea id="velocidades" rows="10"></textarea>
+        </div>
+
         <footer>SENAI SC</footer>
         <footer>Curso de Desinvolvimento de Sistemas</footer>
         <footer>Lógica de Programação</footer>
