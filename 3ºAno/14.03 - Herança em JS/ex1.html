@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Product {
+    constructor(name, price) {
+      this.name = name;
+      this.price = price;
+    }
+  
+    priceTag() {
+      return `${this.name} $${this.price.toFixed(2)}`;
+    }
+  }
+  
+  class ImportedProduct extends Product {
+    constructor(name, price, customsFee) {
+      super(name, price);
+      this.customsFee = customsFee;
+    }
+  
+    priceTag() {
+      const totalPrice = this.price + this.customsFee;
+      return `${this.name} $${totalPrice.toFixed(2)} (Customs fee: $${this.customsFee.toFixed(2)})`;
+    }
+  }
+  
+  class UsedProduct extends Product {
+    constructor(name, price, manufactureDate) {
+      super(name, price);
+      this.manufactureDate = manufactureDate;
+    }
+  
+    priceTag() {
+      const totalPrice = this.price * 0.75;
+      return `${this.name} (used) $${totalPrice.toFixed(2)} (Manufacture date: ${this.manufactureDate})`;
+    }
+  }
+  
+
+  const product1 = new Product("Camiseta", 29.99);
+  const importedProduct1 = new ImportedProduct("iPhone", 799.99, 100);
+  const usedProduct1 = new UsedProduct("Livro", 9.99, "2020-01-01");
+  
+  console.log(product1.priceTag());
+  console.log(importedProduct1.priceTag());
+  console.log(usedProduct1.priceTag());
+  
+    </script>
+</body>
+</html>
