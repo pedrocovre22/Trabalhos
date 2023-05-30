@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Horas</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Calculadora de Horas </h1>
+  <div class="container">
+    <label for="horaInicial">Hora Inicial:</label>
+    <input type="number" id="horaInicial" min="0" max="23">
+    <input type="number" id="minutoInicial" min="0" max="59">
+
+    <label for="horaFinal">Hora Final:</label>
+    <input type="number" id="horaFinal" min="0" max="23">
+    <input type="number" id="minutoFinal" min="0" max="59">
+
+    <button onclick="calcularHoras()">Calcular</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <footer>Pedro Covre e Matheus Trevisan</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
