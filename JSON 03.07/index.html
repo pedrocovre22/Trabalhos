@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<html>
+<head>
+  <title>Pesquisa de Automóveis</title>
+  <script>
+    function pesquisarAutomovel() {
+      var placa = document.getElementById("placa").value.toUpperCase();
+      var automoveis = [];
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          automoveis = JSON.parse(xhr.responseText);
+          var automovelEncontrado = automoveis.find(function(automovel) {
+            return automovel.placa === placa;
+          });
+
+          if (automovelEncontrado) {
+            var resultado = "Placa: " + automovelEncontrado.placa +
+                            "\nMarca: " + automovelEncontrado.marca +
+                            "\nModelo: " + automovelEncontrado.modelo +
+                            "\nAno: " + automovelEncontrado.ano;
+            alert(resultado);
+          } else {
+            alert("Automóvel não encontrado.");
+          }
+        }
+      };
+      xhr.open("GET", "automoveis.json", true);
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+  <h1>Pesquisa de Automóveis</h1>
+  <label for="placa">Digite a placa do automóvel:</label>
+  <input type="text" id="placa">
+  <button onclick="pesquisarAutomovel()">Pesquisar</button>
+</body>
+</html>
