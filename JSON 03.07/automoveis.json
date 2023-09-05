@@ -1,0 +1,62 @@
+[
+  {
+    "placa": "ABC1234",
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "ano": 2018
+  },
+  {
+    "placa": "DEF5678",
+    "marca": "Honda",
+    "modelo": "Civic",
+    "ano": 2020
+  },
+  {
+    "placa": "GHI9012",
+    "marca": "Volkswagen",
+    "modelo": "Golf",
+    "ano": 2019
+  },
+  {
+    "placa": "JKL3456",
+    "marca": "Ford",
+    "modelo": "Fiesta",
+    "ano": 2017
+  },
+  {
+    "placa": "MNO7890",
+    "marca": "Chevrolet",
+    "modelo": "Onix",
+    "ano": 2021
+  },
+  {
+    "placa": "PQR2345",
+    "marca": "Hyundai",
+    "modelo": "HB20",
+    "ano": 2016
+  },
+  {
+    "placa": "STU6789",
+    "marca": "Renault",
+    "modelo": "Kwid",
+    "ano": 2020
+  },
+  {
+    "placa": "VWX0123",
+    "marca": "Fiat",
+    "modelo": "Palio",
+    "ano": 2015
+  },
+  {
+    "placa": "YZA4567",
+    "marca": "Nissan",
+    "modelo": "Versa",
+    "ano": 2019
+  },
+  {
+    "placa": "BCD8901",
+    "marca": "Peugeot",
+    "modelo": "208",
+    "ano": 2018
+  }
+]
